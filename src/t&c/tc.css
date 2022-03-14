@@ -1,0 +1,15 @@
+.termpage{
+    width: 100%;
+    /* height: 770px; */
+    /* background-color: rgb(221, 181, 201); */
+    word-spacing: 5px;
+}
+.termbox{
+    width: 75%;
+    /* background-color: chartreuse; */
+    margin: auto;
+}
+.peragraph{
+    text-align: left;
+    text-align: justify;  
+}

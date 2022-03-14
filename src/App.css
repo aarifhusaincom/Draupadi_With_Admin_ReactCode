@@ -1,0 +1,112 @@
+body {
+  overflow: visible;
+}
+
+.stopscroll {
+  height: 100%;
+  overflow: "hidden";
+}
+.boxo:active {
+  /* background-color: red; */
+  border-radius: 15px;
+  border: 5px solid red;
+}
+
+/* .design_div{
+  border-radius: 20px;
+  width: 340px;
+  box-shadow: 0px 3px 6px grey;
+} */
+.boxo:hover {
+  /* box-shadow: 0px 3px 6px 12px grey; */
+  border: 5px solid grey;
+}
+/* img{
+   width: 100%;
+   height: 100%;
+ } */
+#offerbox {
+  font-size: 18px;
+  font-weight: 600;
+}
+/* #mobile_sidemenu{
+   width: 55vw;
+   height: 100vh;
+   background-color: white;
+   z-index: 20;
+   position: absolute;
+   transform: translateX(70vw);
+   top: 0px;
+ } */
+
+#mobile_sidemenu {
+  width: 35%;
+  height: auto;
+  z-index: 20;
+  position: fixed;
+  left: auto;
+  right: -1px;
+  background: #e0e0e0;
+  box-shadow: -5px 5px 60px #bebebe, 5px -5px 60px #ffffff;
+  top: 28px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.mainwindow {
+  width: 200px;
+}
+.side-menu {
+  color: whitesmoke;
+  text-align: left;
+  padding: 10px;
+  margin: 5px;
+}
+.span-menu {
+  text-align: center;
+  color: white;
+}
+
+.design_scroll_box {
+  width: 90%;
+  margin: auto !important;
+  overflow-x: scroll;
+  /* background-color: chartreuse; */
+}
+
+.design_scroll_box::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll_btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  /* background-color: turquoise; */
+  color: black;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 24px;
+  padding-bottom: 5px;
+  border: 0px;
+  margin-top: 100px;
+}
+.scroll_btn:hover {
+  background-color: turquoise;
+}
+.design-ds_box {
+  display: flex;
+}
+@media (min-width: 350px) and (max-width: 600px) {
+  .design-ds_box {
+    width: 95%;
+    display: flex;
+    margin-left: -30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}

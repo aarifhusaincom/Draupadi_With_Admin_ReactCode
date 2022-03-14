@@ -1,0 +1,9 @@
+.conditionpage{
+    width: 100%;
+    word-spacing: 8px;
+}
+.conditioncontent{
+    width: 75%;
+    margin: auto;
+    text-align: justify;
+}

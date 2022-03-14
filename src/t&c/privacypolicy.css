@@ -1,0 +1,11 @@
+.privacypolicypage{
+    width: 100%;
+    /* height: 600px; */
+    /* background-color: burlywood; */
+    word-spacing: 10px;
+}
+.policycontent{
+    width: 75%;
+    margin: auto;
+    text-align: justify;
+}

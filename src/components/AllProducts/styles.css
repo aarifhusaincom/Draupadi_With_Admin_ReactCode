@@ -1,0 +1,78 @@
+.card{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0 auto;
+    position:relative;
+    top:100px;
+
+}
+
+.icon{
+    width:25px;
+    height:25px;
+}
+.all{
+    display:flex;
+}
+
+.button.is-primary {
+    background-color: #555;
+    width:100px;
+    height:30px;
+    border-radius:5px;
+
+   
+}
+
+.button.is-primary:hover {
+    background-color: #1E2019;
+}
+
+.title {
+    color: #FB8F67;
+    font-family: 'Inconsolata', monospace;
+    font-size: 3em;
+}
+
+.imgs{
+    height: 300px;
+    width: 300px;
+    border-radius:5px;
+}
+
+.card-image{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0 2 rem;
+    width: 300px;
+    border-color:#808080;
+    padding:25px;
+}
+
+#inner-large-banner {
+    height: 40%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 25%;
+}
+
+#wrapper {
+    width: 80%;
+    min-height: 70%;
+    /* margin-top: -100px; */
+    background-color: #F9FBF2;
+    margin: -100px auto 0 auto;
+    padding: 30px;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+    border-radius: .25rem;
+}
+
+#product-catalog {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.product-title {
+    font-size: 2em;
+}

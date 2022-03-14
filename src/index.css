@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Amiri&display=swap");
+
+* {
+  /* font-family:Amiri; */
+  font-family: "Amiri", serif;
+  /* color: blueviolet; */
+}
+
+@media only screen and (max-width: 320px) {
+  #root {
+    width: 320px;
+    height: auto;
+    /* font-family: "Roboto"; */
+    font-family: "Amiri", serif;
+  }
+}
+body {
+  background-color: white;
+}

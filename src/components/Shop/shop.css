@@ -1,0 +1,12 @@
+
+.strong{
+    margin-left: 135px;
+}
+@media (min-width:342px) and (max-width:668px) {
+    .strong{
+        margin-left: -70px;
+    }
+    
+}
+
+

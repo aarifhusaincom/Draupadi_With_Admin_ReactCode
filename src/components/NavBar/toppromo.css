@@ -1,0 +1,22 @@
+
+.scrolldiv{
+    width: 100vw;
+    height: 80px;
+    background-color: aqua;
+    /* margin: auto; */
+    /* margin-left: 250px; */
+}
+
+.offerstrip{
+    width:100vw;
+    height:30px;
+    background-color: red;
+    color:white;
+}
+.offerstrip_content{
+    width: 100vw;
+    /* background-color: aqua; */
+    margin: auto;
+    text-align: center;
+    font-weight: 900;
+}

@@ -131,14 +131,13 @@ const NavBar = (props) => {
           );
         })}
       </div>
+      <div style={{ marginTop: "-50px" }} className="absolute ml-[20px] mr-6 left-0 ">
+        <Link className="navbar-brand" to="/">
+          {logg}
+        </Link>
+      </div>
       {/* {data && data.length ? (LinkNav()):('')} */}
-      <div className="flex justify-around items-center h-[100px] ">
-        <div style={{ marginTop: "-50px" }} className="mobi_logo_div">
-          <Link className="navbar-brand" to="/">
-            {logg}
-          </Link>
-        </div>
-
+      <div className="flex justify-around items-center h-[100px]  relative left-[80px]">
         {/* //--Header-menu */}
         <div className="hidden  md:!inline md:!flex md:!items-center md:justify-between ">
           {category.map((data, index) => {
@@ -174,8 +173,8 @@ const NavBar = (props) => {
           })}
         </div>
 
-        <div className="mobile_useroption">
-          <ul className="d-flex" style={{ justifyContent: "space-between" }}>
+        <div className="mobile_useroption ">
+          <ul className="d-flex " style={{ justifyContent: "space-between" }}>
             {AuthService.getCurrentUser() ? (
               <li
                 className="nav-item"
@@ -194,7 +193,7 @@ const NavBar = (props) => {
               </li>
             ) : (
               <li
-                className="nav-item"
+                className="nav-item mt-3"
                 style={{
                   paddingRight: 10,
                   paddingLeft: 10,
@@ -228,7 +227,7 @@ const NavBar = (props) => {
               </li>
             )}
             <li
-              className="nav-item"
+              className="nav-item "
               style={{
                 paddingRight: 10,
                 paddingLeft: 10,

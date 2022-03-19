@@ -63,47 +63,21 @@ const ProductItem = (props) => {
             </div>
           </div>
           <div className="container" Style="text-align:center;">
-            <h8 className="title" style={{ fontSize: 12, color: "black" }}>
+            <h8 className="title" style={{ fontSize: 15, color: "black" }}>
               <strong>{product.product_name.toUpperCase()}</strong>
             </h8>
           </div>
-          <div className="row">
-            <div className="column">
+          <div className=" flex justify-between">
+            <span className="text-xl ml-1">
+              <strong>₹{product.product_price}</strong>
+            </span>
+            <span className="mr-1">
               <p style={{ textDecoration: "line-through" }}>
-              ₹ {product.product_actualprice}
+                ₹{product.product_actualprice}
               </p>
-            </div>
-            <div className="column">
-              <strong>₹ {product.product_price}</strong>
-            </div>
+            </span>
           </div>
-          <div className="container" Style="text-align:center;">
-            {/* <button
-                className="button is-small is-danger card-footer-item is-pulled-left"
-                 style={{margin:10}}
-                onClick={()=> props.getproduct(product.product_id)}
-                //onClick={()=>viewdetailsHandler(product.product_id)}
-              >
-              View
-              </button> */}
-            {/* <button
-                style={{margin:10,backgroundColor:'#E71E2D'}}
-                className={click ? "button is-small  is-success ":"button is-small is-danger"}
-                onClick={() =>{
-                  props.addToCart({
-                    id: product.product_id,
-                    product,
-                    amount: 1,
-                    total:0,
-                    payable:0
-                  });
-                  setClick(true);
-                }
-                }
-              >
-               {click ? "Saved in Cart":"Add to Cart"}
-              </button> */}
-          </div>
+          <div className="container" Style="text-align:center;"></div>
         </div>
       </div>
     </>

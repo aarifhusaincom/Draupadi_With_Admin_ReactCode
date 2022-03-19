@@ -52,7 +52,7 @@ const ProductList = (props) => {
                             className="title"
                             style={{
                               color: "#BA7D82",
-                              fontSize: 25,
+                              fontSize: 19,
                               fontWeight: 600,
                             }}
                           >

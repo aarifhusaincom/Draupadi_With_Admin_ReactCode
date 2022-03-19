@@ -28,6 +28,7 @@ const Footer = () => {
 
   const subsCribe = async (e) => {
     e.preventDefault();
+    //e.target.setCustomValidity("Please enter a valid Email Id");
     return await axios
       .post("https://cerbosys.in:4000/draupadi/insertSubscription", {
         subscription_email: mail,
@@ -57,32 +58,82 @@ const Footer = () => {
     </div>
   );
 
+  const ReadMore = ({ children }) => {
+    const text = children;
+    const [isReadMore, setIsReadMore] = useState(true);
+    const toggleReadMore = () => {
+      setIsReadMore(!isReadMore);
+    };
+    return (
+      <p className="text">
+        {isReadMore ? text.slice(0, 280) : text}
+        <span
+          onClick={toggleReadMore}
+          className="read-or-hide cursor-pointer font bold text-blue-500"
+        >
+          {isReadMore ? "...Read More" : " Show Less"}
+        </span>
+      </p>
+    );
+  };
+
   const linkName = readMore ? "Read Less << " : "Read More >> ";
   return (
     <>
       <div className="container-fluid" style={{ backgroundColor: "#f9f7f3" }}>
         <div className="container" style={{ backgroundColor: "#f9f7f3" }}>
           <div className="row" id="foott" style={{ paddingTop: 20 }}>
-            <div className="col py-2" style={{ marginRight: -15 }}>
+            <div
+              className="col-3 py-2 flex flex-col space-y-3"
+              style={{ marginRight: -15 }}
+            >
               <strong>
-                <FooterHeader1 style={{ fontSize: "18px" }}>Info</FooterHeader1>
-                {/* <FooterLink  >FAQ</FooterLink> */}
-                <FooterLink to="/shipping">Shipping & Returns</FooterLink>
-                <FooterLink to="/termsandconditions">
-                  Terms & Condition
-                </FooterLink>
-                <FooterLink to="/privacyPolicy">Privacy Policy</FooterLink>
-                {/* <li>
+                <FooterHeader1
+                  className="border-t-[1px] border-b-[1px] border-slate-400 py-[4px]"
+                  style={{ fontSize: "18px" }}
+                >
+                  Info
+                </FooterHeader1>
+              </strong>
+              {/* <FooterLink  >FAQ</FooterLink> */}
+              <strong>
+                <span>
+                  <Link to="/shipping" className="text-black no-underline">
+                    Shipping & Returns
+                  </Link>
+                </span>
+              </strong>
+              <strong>
+                <span>
+                  <Link
+                    to="/termsandconditions"
+                    className="text-black no-underline"
+                  >
+                    Terms & Condition
+                  </Link>
+                </span>
+              </strong>
+              <strong>
+                <span>
+                  <Link to="/privacyPolicy" className="text-black no-underline">
+                    Privacy Policy
+                  </Link>
+                </span>
+              </strong>
+
+              {/* <li>
         <FooterLink>Refund Policy</FooterLink>
         </li> */}
-                {/* <li>
+              {/* <li>
         <FooterLink>In The News</FooterLink>
         </li> */}
-              </strong>
             </div>
-            <div className="col py-2">
+            <div className="col-3 py-2">
               <strong>
-                <FooterHeader style={{ fontSize: "18px" }}>
+                <FooterHeader
+                  className="border-t-[1px] border-b-[1px] border-slate-400 py-[4px]"
+                  style={{ fontSize: "18px" }}
+                >
                   Reach Us
                 </FooterHeader>
                 <br />
@@ -150,8 +201,13 @@ justify-content:space-between;"
                 </a>
               </div>
             </div>
-            <div className="col-4 py-2" style={{ marginRight: 25 }}>
-              <FooterHeader style={{ fontSize: "18px" }}>About </FooterHeader>
+            <div className="col-3 py-2" style={{ marginRight: 25 }}>
+              <FooterHeader
+                className="border-t-[1px] border-b-[1px] border-slate-400 py-[4px]"
+                style={{ fontSize: "18px" }}
+              >
+                About{" "}
+              </FooterHeader>
               <br />
               <strong style={{ color: "#404040" }}>
                 <p
@@ -159,28 +215,30 @@ justify-content:space-between;"
                   Style="text-align:justify;position:relative;font-size:14px; word-spacing:5px;
         font-family:Amiri,serif; font-style: normal;"
                 >
-                  Draupadi was established in February 2021 at Mathura, the
-                  homeland and birthplace of Lord Krishna. Mathura is known for
-                  its textile industry and especially for Sari Printing &
-                  Manufacturing. Most of the villages around Mathura have
-                  conditions of poverty leading to malnutrition, child labour,
-                  scarce resources for an average family size of 6-8, and lack
-                  of purpose to avail education, especially for the girl
-                  child...
-                  <a
-                    className="read-more-link"
-                    onClick={() => {
-                      setReadMore(!readMore);
-                    }}
-                  >
-                    {linkName}
-                  </a>
-                  {readMore && extraContent}
+                  <ReadMore>
+                    Draupadi was established in February 2021 at Mathura, the
+                    homeland and birthplace of Lord Krishna. Mathura is known
+                    for its textile industry and especially for Sari Printing &
+                    Manufacturing. Most of the villages around Mathura have
+                    conditions of poverty leading to malnutrition, child labour,
+                    scarce resources for an average family size of 6-8, and lack
+                    of purpose to avail education, especially for the girl
+                    child.The idea behind establishing this unit was to provide
+                    an avenue of employment to the under-privileged to uplift
+                    and empower them while creating quality products. Draupadi
+                    upcycles the Sari wastes to develop vibrant and trendy bags
+                    & accessories. These bags & accessories are made by the
+                    underprivileged women residing in the nearby villages of
+                    Mathura..
+                  </ReadMore>
                 </p>
               </strong>
             </div>
             <div className="col py-2">
-              <FooterHeader style={{ fontSize: "18px" }}>
+              <FooterHeader
+                className="border-t-[1px] border-b-[1px] border-slate-400 py-[4px]"
+                style={{ fontSize: "18px" }}
+              >
                 News & Update
               </FooterHeader>
               <br />
@@ -198,6 +256,7 @@ justify-content:space-between;"
                   placeholder="Enter Email Address..."
                   onChange={onchangeMail}
                   type="email"
+                  // onInvalid={this.target.setCustomValidity("Please enter email")}
                   value={mail}
                   required
                 />
@@ -238,6 +297,17 @@ justify-content:space-between;"
             Cerbosys
           </a>
         </div>{" "}
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </>
   );

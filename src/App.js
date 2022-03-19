@@ -30,6 +30,8 @@ import LastOrder from "./component/lastOrders";
 import Footer from "./components/Footer/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Tc from "./t&c/Tc";
+import NewUserLogin from "./Pages/NewUserLogin";
+import TestCart from "./Pages/TestCart";
 import Privacy from "./t&c/Privacy";
 import Condition from "./t&c/Condition";
 import { DocumentEdit } from "styled-icons/fluentui-system-filled";
@@ -559,7 +561,8 @@ export default class App extends Component {
           <Route exact path="/yourorders" component={LastOrder} />
           <Route exact path="/Mywishlist" component={WishList} />
           <Route exact path="/designs" component={DesignList} />
-
+          <Route exact path="/newuserlogin" component={TestCart} />
+          <Route exact path="/testcart" component={TestCart} />
           <Footer />
         </div>
         {/* <div

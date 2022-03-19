@@ -93,10 +93,11 @@ export default function Profile(props) {
               <FeaturedItem className="feature-item">
                 <FeaturedMoneyContainer className="edit-info-div">
                   <Link
-                    to="/login"
+                    to="/"
                     style={{ color: "#BA7D82", position: "relative" }}
                   >
-                    <img className="limgo"
+                    <img
+                      className="limgo"
                       src={logout}
                       onClick={() => {
                         dispatch({ type: "LOGOUT_USER" });

@@ -78,7 +78,7 @@ export default function WishList() {
           Style="border-bottom-style:dashed;border-bottom-width:thin;border-bottom-color:#BA7D82;"
         >
           <div className="hero-body container">
-            <h4 className="title">My WishList</h4>
+            <h3 className="">My WishList</h3>
           </div>
         </div>
         <br />

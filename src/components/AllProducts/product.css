@@ -66,6 +66,12 @@
   color: black;
 }
 
+.table>:not(caption)>*>* {
+  
+  
+  border-bottom-width: 0px !important;
+}
+
 @media (min-width: 300px) and (max-width: 374px) {
   .choose-degine-box {
     width: 150px;

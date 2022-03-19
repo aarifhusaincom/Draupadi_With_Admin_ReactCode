@@ -27,7 +27,7 @@ import axios from "axios";
 import Scroll from "react-scroll-to-element";
 import { NavDropdown } from "react-bootstrap";
 import Logintbygoogle from "../../component/loginwithgoogle";
-import { logg } from "./Icons";
+//import { logg } from "./Icons";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -69,11 +69,11 @@ const NavBar = (props) => {
   const cartcount = useSelector((state) => state.cart).length;
 
   const user = useSelector((state) => state.user).user_name;
-
+  const userToken = useSelector((state) => state.user).token;
   return (
     <nav
       // style={{ justifyContent: "right", backgroundColor: "white", zIndex: 20 }}
-      className="flex justify-center items-center !max-w-screen sticky top-0  bg-[#f1f0f0] px-4 z-20 "
+      className="flex h-[90px] justify-center items-center !max-w-screen sticky top-0  bg-[#f1f0f0] px-4 z-20 "
 
       //   `${
       //   navBar
@@ -131,157 +131,176 @@ const NavBar = (props) => {
           );
         })}
       </div>
-      <div style={{ marginTop: "-50px" }} className="absolute ml-[20px] mr-6 left-0 ">
-        <Link className="navbar-brand" to="/">
-          {logg}
-        </Link>
-      </div>
-      {/* {data && data.length ? (LinkNav()):('')} */}
-      <div className="flex justify-around items-center h-[100px]  relative left-[80px]">
-        {/* //--Header-menu */}
-        <div className="hidden  md:!inline md:!flex md:!items-center md:justify-between ">
-          {category.map((data, index) => {
-            return (
-              <div
-                className="px-2 cursor-pointer flex justify-center items-center hover:bg-[#e1e1e1] hover:rounded-md hover:shadow-sm transition-all duration-500 "
-                onClick={() => {
-                  // if (location.pathname.split("/")[1] == "products") {
-                  //   scrollToElement(
-                  //     `#${data.category_name.toLowerCase().split(" ")[0]}`
-                  //   );
-                  // } else {
-                  //   history.push("/products");
-                  // }
-                  history.push("/products");
-                  setTimeout(
-                    () =>
-                      scrollToElement(
-                        `#${data.category_name.toLowerCase().split(" ")[0]}`
-                      ),
-                    10
-                  );
-                }}
-              >
-                <span
-                  className="p-2 !no-underline flex justify-start"
-                  style={{ color: "black" }}
-                >
-                  {data.category_name}
-                </span>
-              </div>
-            );
-          })}
+      <div className=" flex w-full justify-between my-auto ">
+        <div
+          className=" lg:ml-[10px] !max-w-screen  flex flex-1 items-center justify-center"
+          // style={{ marginTop: "-50px" }}
+          // className="absolute ml-[20px] mr-6 left-0 border-2"
+        >
+          <div
+            onClick={() => history.push("/")}
+            className="my-auto flex justify-center items-center cursor-pointer "
+          >
+            <img
+              src="/Icons.png"
+              className="w-[100px] flex-1 md:!w-40 object-contain"
+            />
+          </div>
+
+          {/* {logg}     */}
         </div>
-
-        <div className="mobile_useroption ">
-          <ul className="d-flex " style={{ justifyContent: "space-between" }}>
-            {AuthService.getCurrentUser() ? (
-              <li
-                className="nav-item"
-                style={{
-                  paddingRight: 10,
-                  paddingLeft: 20,
-                  paddingTop: 20,
-
-                  paddingBottom: 20,
-                  cursor: "pointer",
-                }}
-              >
-                <NavLink to="/profile">
-                  <FaUserCircle />
-                </NavLink>
-              </li>
-            ) : (
-              <li
-                className="nav-item mt-3"
-                style={{
-                  paddingRight: 10,
-                  paddingLeft: 10,
-                  paddingTop: 15,
-                  paddingBottom: 20,
-                  cursor: "pointer",
-                }}
-              >
-                <strong
-                  style={{
-                    color: "#555",
-                    fontSize: "15px",
-                    fontFamily: "Amiri,serif",
-                    fontStyle: "normal",
-                    texTransform: "capitalize",
+        {/* {data && data.length ? (LinkNav()):('')} */}
+        <div className="flex justify-around items-center h-[100px]   md:mr-[160px]">
+          {/* //--Header-menu */}
+          <div className="hidden  md:!inline md:!flex md:!items-center md:justify-between ">
+            {category.map((data, index) => {
+              return (
+                <div
+                  className=" cursor-pointer flex justify-center items-center "
+                  onClick={() => {
+                    // if (location.pathname.split("/")[1] == "products") {
+                    //   scrollToElement(
+                    //     `#${data.category_name.toLowerCase().split(" ")[0]}`
+                    //   );
+                    // } else {
+                    //   history.push("/products");
+                    // }
+                    history.push("/products");
+                    setTimeout(
+                      () =>
+                        scrollToElement(
+                          `#${data.category_name.toLowerCase().split(" ")[0]}`
+                        ),
+                      10
+                    );
                   }}
                 >
-                  {user ? (
-                    <NavLink to="/profile">
-                      <FiUser size={25} className="cursor-pointer" />
-                    </NavLink>
-                  ) : (
-                    <NavLink
-                      to="/login"
-                      className="cursor-pointer no-underline"
-                    >
-                      Login
-                    </NavLink>
-                  )}
-                </strong>
+                  <span
+                    className="p-2 !no-underline flex justify-start hover:!text-red-600 text-sm"
+                    style={{ color: "black" }}
+                  >
+                    {data.category_name}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mobile_useroption ">
+            <ul className="d-flex items-center" style={{ justifyContent: "space-between" }}>
+              {AuthService.getCurrentUser() ? (
+                <li
+                  className="nav-item"
+                  style={{
+                    paddingRight: 10,
+                    paddingLeft: 20,
+                    paddingTop: 20,
+
+                    paddingBottom: 20,
+                    cursor: "pointer",
+                  }}
+                >
+                  <NavLink to="/profile">
+                    {/* <FaUserCircle /> */}
+                  </NavLink>
+                </li>
+              ) : (
+                <li
+                  className="nav-item mt-3"
+                  style={{
+                    // paddingRight: 10,
+                    // paddingLeft: 10,
+                    paddingTop: 15,
+                    paddingBottom: 20,
+                    cursor: "pointer",
+                  }}
+                >
+                  <strong
+                    style={{
+                      color: "#555",
+                      fontSize: "15px",
+                      fontFamily: "Amiri,serif",
+                      fontStyle: "normal",
+                      texTransform: "capitalize",
+                    }}
+                  >
+                    {userToken ? (
+                      <NavLink to="/profile">
+                        <FiUser size={25} className="cursor-pointer mr-4" />
+                      </NavLink>
+                    ) : (
+                      <NavLink
+                        to="/login"
+                        className="cursor-pointer no-underline mr-4"
+                      >
+                        Login
+                      </NavLink>
+                    )}
+                  </strong>
+                </li>
+              )}
+              <li
+                className="nav-item "
+                style={{
+                  // paddingRight: 10,
+                  // paddingLeft: 10,
+                  paddingTop: 20,
+                  paddingBottom: 20,
+                  cursor: "pointer",
+                }}
+              >
+                <NavLink to="/Mywishlist">
+                  {wishcount ? <div className="pcount ">{wishcount} </div> : ""}
+
+                  <FaHeart className="hover:text-red-500 hover:animate-bounce transition-all duration-200 text-xl !mr-4 md:!mr-1 " />
+                </NavLink>
               </li>
-            )}
-            <li
-              className="nav-item "
-              style={{
-                paddingRight: 10,
-                paddingLeft: 10,
-                paddingTop: 20,
-                paddingBottom: 20,
-                cursor: "pointer",
-              }}
-            >
-              <NavLink to="/Mywishlist">
-                {wishcount ? <div className="pcount ">{wishcount} </div> : ""}
+              <li
+                onClick={() => {
+                  if (userToken == undefined) {
+                    history.push("/newuserlogin");
+                  }
+                }}
+                className="nav-item mr-4"
+                style={{
+                  // paddingRight: 10,
+                  // paddingLeft: 10,
+                  paddingTop: 20,
+                  paddingBottom: 20,
+                  cursor: "pointer",
+                  fontSize: 20,
+                }}
+              >
+                <NavLink to="/cart">
+                  {cartcount ? <div className="pcount">{cartcount} </div> : ""}
 
-                <FaHeart className="hover:text-red-500 hover:animate-bounce transition-all duration-200 text-xl " />
-              </NavLink>
-            </li>
-            <li
-              className="nav-item"
-              style={{
-                paddingRight: 10,
-                paddingLeft: 10,
-                paddingTop: 20,
-                paddingBottom: 20,
-                cursor: "pointer",
-                fontSize: 20,
-              }}
-            >
-              <NavLink to="/cart">
-                {cartcount ? <div className="pcount">{cartcount} </div> : ""}
+                  <FaShoppingCart />
+                </NavLink>
+              </li>
+            </ul>
+          </div>
 
-                <FaShoppingCart />
-              </NavLink>
-            </li>
-          </ul>
+          <button
+            className="md:hidden hamburger-icon "
+            //  className={`${toggle ? "open-sidebar"  : "close-sidebar"}`}
+            type="button"
+            // onClick={sidetoggle}
+            onClick={() => {
+              if (toggle) {
+                setToggle(false);
+              } else {
+                setToggle(true);
+              }
+            }}
+            // data-toggle="collapse"
+            // data-target="#colNav"
+            // aria-controls="navbarSupportedContent"
+            // aria-expanded="false"
+            // aria-label="Toggle navigation"
+          >
+            <CgMenu size={24} azz />
+          </button>
         </div>
-
-        <button
-          className="md:hidden hamburger-icon "
-          //  className={`${toggle ? "open-sidebar"  : "close-sidebar"}`}
-          type="button"
-          // onClick={sidetoggle}
-          onClick={() => {
-            if (toggle) {
-              setToggle(false);
-            } else {
-              setToggle(true);
-            }
-          }}
-          // data-toggle="collapse"
-          // data-target="#colNav"
-          // aria-controls="navbarSupportedContent"
-          // aria-expanded="false"
-          // aria-label="Toggle navigation"
-        >
-          <CgMenu size={24} azz />
-        </button>
       </div>
     </nav>
   );

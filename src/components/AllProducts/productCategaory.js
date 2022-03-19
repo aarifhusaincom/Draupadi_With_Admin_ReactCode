@@ -232,58 +232,25 @@ const Pcategory = (props) => {
           </span>
         </p>
       </div>
-      <div className="container" Style="position:relative;margin-top:40px;">
+
+      <div
+        className="container  md:flex md:justify-center md:items-center  w-auto mx-auto"
+        Style="position:relative;margin-top:40px;"
+      >
+        <img
+          className="rounded-md object-contain h-[500px] inline"
+          //https://img.starbiz.com/resize/750x-/2020/02/11/amber-heard-2a66.jpg
+          src={`https://cerbosys.in:4000${product?.product_image?.substr(8)}`}
+          // src="https://img.starbiz.com/resize/750x-/2020/02/11/amber-heard-2a66.jpg"
+          alt="fb"
+        />
         <Table Style="border:none">
           <tr Style="border:none" className="min-device-getproduct">
             <th Style="border:none">
-              <PcategoryContainer>
-                <Pheader>
-                  <strong
-                    style={{
-                      color: "#BA7D82",
-                      fontFamily: "Amiri, serif",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    {product?.product_name}
-                  </strong>
-                </Pheader>
-                <Pname>
-                  <strong
-                    style={{
-                      fontFamily: "Amiri, serif",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    {product?.category_name}
-                  </strong>
-                </Pname>
-                <ul Style="margin: 0.75em 0;padding: 0 1em;list-style: none;">
-                  <Plist>
-                    <strong
-                      style={{
-                        color: "#555",
-                        fontFamily: "Amiri, serif",
-                        textTransform: "capitalize",
-                      }}
-                    >
-                      {product?.subcategory_name}
-                    </strong>
-                  </Plist>
-                </ul>
-              </PcategoryContainer>
-            </th>
-            <th Style="border:none">
-              <ImageContainer>
-                {/* <Image src={`https://45.80.152.232:4000${sStr}`} alt='fb'/> */}
-                <Image
-                  className="product-img"
-                  src={`https://cerbosys.in:4000${product?.product_image?.substr(
-                    8
-                  )}`}
-                  alt="fb"
-                />
-              </ImageContainer>
+              {/* <ImageContainer> */}
+              {/* <Image src={`https://45.80.152.232:4000${sStr}`} alt='fb'/> */}
+
+              {/* </ImageContainer> */}
 
               {/* <Scrolldiv>
       <SmallImage src={`http://45.80.152.232:2000${sStr}`} alt='gh'/>
@@ -293,16 +260,31 @@ const Pcategory = (props) => {
       </Scrolldiv> */}
             </th>
             <th Style="border:none">
+              {/* //  <Pheader> */}
+              <strong
+                className="!ml-[10px]"
+                style={{
+                  color: "#BA7D82",
+                  fontFamily: "Amiri, serif",
+                  textTransform: "capitalize",
+                  fontSize: "30px",
+                }}
+              >
+                {product?.product_name}
+              </strong>
+              {/* </Pheader> */}
+
               <DetailsContainer>
                 <div className="container">
-                  <strong
+                  {/* ////comment start */}
+                  {/* <strong  
                     style={{
                       fontSize: 16,
                       fontFamily: "Amiri, serif",
                       textTransform: "capitalize",
                     }}
                   >
-                    {product?.subcategory_name} &nbsp; By Draupadi
+                    {product?.subcategory_name}&nbsp;By Draupadi
                   </strong>
                   <br />
                   <br />
@@ -317,42 +299,54 @@ const Pcategory = (props) => {
                     &nbsp;|&nbsp; {product.subcategory_name}
                   </strong>
                   <br />
-                  <br />
+                  <br /> */}
                   {/* <h3 className='title' Style='font-size:15px;'><strong>SKU      | {product.product_id}</strong></h3> */}
-                  <label
+                  {/* <label
                     className="checkbox"
                     style={{ fontSize: 16, fontFamily: "Amiri, serif" }}
-                  >
+                  > */}
+
+                  {/* /comment end */}
+                  <span className="flex">
                     <input
                       type="checkbox"
+                      className="ml-[5px]"
                       onChange={(e) => {
                         setCustomDesign(e.target.checked);
+                        setDesign("");
                         console.log(e.target.checked);
                       }}
                     />
-                    <strong style={{ paddingLeft: 10 }}>
-                      Choose Your Design&nbsp;&nbsp;&nbsp;
+                    <strong style={{ paddingLeft: "5px" }}>
+                      &nbsp; Choose Your Design&nbsp;&nbsp;&nbsp;
                     </strong>
-                  </label>
-                  <br />
+                  </span>
+
+                  {/* </label> */}
+                  {/* <br /> */}
                   {customdesign ? (
                     <div className="w-[300px] design-scroll h-[180px] flex items-center  overflow-x-scroll rounded-lg  shadow-inner">
                       {customdesigndata?.map((data, index) => {
                         console.log("8888888888888", data);
                         return (
                           <div
-                            className="w-[150px] design-flex mx-2 cursor-pointer  rounded-md bg-gray-200 border-slate-400 p-1"
+                            className={`w-[150px]  design-flex mx-2 cursor-pointer  rounded-md ${
+                              design.customised_designid ==
+                              data.customised_designid
+                                ? "bg-[#bf6b6b] !text-white"
+                                : "bg-gray-200"
+                            }  border-slate-400 p-1`}
                             onClick={() => {
                               setDesign(data);
 
-                              console.log(data);
+                              console.log("custom design data---", data);
                             }}
                           >
                             <img
                               src={`https://cerbosys.in:4000${data?.designimage?.substr(
                                 8
                               )}`}
-                              className="object-contain w-full  rounded-md"
+                              className="object-cover !w-full h-[80px]  rounded-md"
                             />
 
                             <div className="flex flex-col items-center   mt-3">
@@ -418,91 +412,118 @@ const Pcategory = (props) => {
                     ""
                   )}
                   <br />
-                  <p style={{ wordSpacing: 10 }}>
+
+                  <p
+                    style={{ wordSpacing: 10 }}
+                    className="flex flex-col justify-start"
+                  >
                     <span>
-                      ₹
-                      <strong className="text-2xl !font-extrabold">
-                        {product.product_price +
-                          (design?.price ? design?.price : 0) -
-                          promoCodeDiscount}
-                        /-
-                        {console.log("product---", product)}
+                      <span>
+                        <span className="text-md mr-[5px]">₹</span>
+                        <span className="text-md !font-extrabold">
+                          {product.product_price +
+                            (customdesign
+                              ? design?.price
+                                ? design?.price
+                                : 0
+                              : 0) -
+                            promoCodeDiscount}
+                          /-
+                          {console.log("product---", product)}
+                        </span>
+                      </span>
+                      <strong
+                        style={{ color: "#555", opacity: 0.6, wordSpacing: 5 }}
+                      >
+                        &nbsp; All Inclusive
                       </strong>
                     </span>
-                    <strong
-                      style={{ color: "#555", opacity: 0.6, wordSpacing: 5 }}
-                    >
-                      All Inclusive
-                    </strong>
-                    {wishlistStatus ? (
-                      <RiHeart3Fill
-                        onClick={() => {
-                          dispatch({
-                            type: "REMOVE_FROM_WISHLIST",
-                            payload: product.product_id,
-                          });
-                          toast(
-                            `${product.product_name} is removed from your wishlist !   😯😯 `,
-                            {
-                              position: "top-center",
-                              autoClose: 3000,
-                              hideProgressBar: true,
-                              closeOnClick: true,
-                              pauseOnHover: false,
-                              draggable: true,
-                              progress: undefined,
-                            }
-                          );
-                        }}
-                        style={{
-                          paddingLeft: 10,
-                          width: 35,
-                          height: 35,
-                          color: "red",
-                        }}
-                      />
-                    ) : (
-                      <RiHeart3Line
-                        style={{ paddingLeft: 10, width: 35, height: 35 }}
-                        onClick={() => {
-                          if (user) {
-                            dispatch({
-                              type: "ADD_TO_WISHLIST",
-                              payload: product,
-                            });
-                            toast(
-                              `${product.product_name} is added to your wishlist !   ❤🧡 `,
-                              {
-                                position: "top-center",
-                                autoClose: 3000,
-                                hideProgressBar: true,
-                                closeOnClick: true,
-                                pauseOnHover: false,
-                                draggable: true,
-                                progress: undefined,
-                              }
-                            );
-                          } else {
-                            toast.error(
-                              `You should login first to perform this action 😥😥 `,
-                              {
-                                position: "top-center",
-                                autoClose: 5000,
-                                hideProgressBar: true,
-                                closeOnClick: true,
-                                pauseOnHover: false,
-                                draggable: true,
-                                progress: undefined,
-                              }
-                            );
-                          }
-                        }}
-                      />
-                    )}
+                    <span className="">
+                      {/* {<div className="bg-[#606060] flex items-center space-x-1 inline p-2 rounded-md text-white w-[200px]">
+                        <span>ADD TO WISHLIST</span>
+                        <span>
+                          {wishlistStatus ? (
+                            <RiHeart3Fill
+                            size={10}
+                              onClick={() => {
+                                dispatch({
+                                  type: "REMOVE_FROM_WISHLIST",
+                                  payload: product.product_id,
+                                });
+                                toast(
+                                  `${product.product_name} is removed from your wishlist !   😯😯 `,
+                                  {
+                                    position: "top-center",
+                                    autoClose: 3000,
+                                    hideProgressBar: true,
+                                    closeOnClick: true,
+                                    pauseOnHover: false,
+                                    draggable: true,
+                                    progress: undefined,
+                                  }
+                                );
+                              }}
+                              style={{
+                                // paddingLeft: 10,
+                                width: 25,
+                                height: 35,
+                                color: "red",
+                              }}
+                            />
+                          ) : (
+                            <RiHeart3Line
+                            size={10}
+                              style={{
+                                // paddingLeft: 10,
+
+                                width: 25,
+                                height: 30,
+                              }}
+                              onClick={() => {
+                                if (user) {
+                                  dispatch({
+                                    type: "ADD_TO_WISHLIST",
+                                    payload: product,
+                                  });
+                                  toast(
+                                    `${product.product_name} is added to your wishlist !   ❤🧡 `,
+                                    {
+                                      position: "top-center",
+                                      autoClose: 3000,
+                                      hideProgressBar: true,
+                                      closeOnClick: true,
+                                      pauseOnHover: false,
+                                      draggable: true,
+                                      progress: undefined,
+                                    }
+                                  );
+                                } else {
+                                  toast.error(
+                                    `You should login first to perform this action 😥😥 `,
+                                    {
+                                      position: "top-center",
+                                      autoClose: 5000,
+                                      hideProgressBar: true,
+                                      closeOnClick: true,
+                                      pauseOnHover: false,
+                                      draggable: true,
+                                      progress: undefined,
+                                    }
+                                  );
+                                }
+                              }}
+                            />
+                          )}
+                        </span>
+                      </div>} */}
+
+                      {/* //------------------------------------- */}
+                    </span>
                   </p>
-                  <button
-                    onClick={() => {
-                      if (user) {
+                  <span className="flex flex-col justify-start space-y-2 md:space-x-2 md:space-y-0  md:flex md:flex-row">
+                    <button
+                      onClick={() => {
+                        // if (user) {
                         if (design === {}) {
                           dispatch({
                             type: "ADD_TO_CART",
@@ -512,19 +533,42 @@ const Pcategory = (props) => {
                             },
                           });
                         } else {
-                          dispatch({
-                            type: "ADD_TO_CART",
-                            payload: {
-                              uid: cart.length,
-                              ...product,
-                              ...design,
+                          if (customdesign) {
+                            dispatch({
+                              type: "ADD_TO_CART",
+                              payload: {
+                                uid: cart.length,
+                                ...product,
+                                ...design,
 
-                              product_price:
-                                product.product_price +
-                                (design.price ? design.price : 0) -
-                                promoCodeDiscount,
-                            },
-                          });
+                                product_price:
+                                  product.product_price +
+                                  (customdesign
+                                    ? design.price
+                                      ? design.price
+                                      : 0
+                                    : 0) -
+                                  promoCodeDiscount,
+                              },
+                            });
+                          } else {
+                            dispatch({
+                              type: "ADD_TO_CART",
+                              payload: {
+                                uid: cart.length,
+                                ...product,
+
+                                product_price:
+                                  product.product_price +
+                                  (customdesign
+                                    ? design.price
+                                      ? design.price
+                                      : 0
+                                    : 0) -
+                                  promoCodeDiscount,
+                              },
+                            });
+                          }
                         }
 
                         setpromoCodeError("");
@@ -541,68 +585,171 @@ const Pcategory = (props) => {
                             progress: undefined,
                           }
                         );
-                      } else {
-                        toast.error(
-                          `You should login first to perform this action 😥😥 `,
-                          {
-                            position: "top-center",
-                            autoClose: 5000,
-                            hideProgressBar: true,
-                            closeOnClick: true,
-                            pauseOnHover: false,
-                            draggable: true,
-                            progress: undefined,
-                          }
-                        );
-                      }
+                        // }
 
-                      // {design ? (
-                      //   <span className="flex items-center justify-center bg-green-300 w-[110px] p-[1px] rounded-full">
-                      //     customised &nbsp;
-                      //     <MdOutlineCancel size={17} />
-                      //   </span>
-                      // ) : (
-                      //   ""
-                      // )}
+                        // else {
+                        //   toast.error(
+                        //     `You should login first to perform this action 😥😥 `,
+                        //     {
+                        //       position: "top-center",
+                        //       autoClose: 5000,
+                        //       hideProgressBar: true,
+                        //       closeOnClick: true,
+                        //       pauseOnHover: false,
+                        //       draggable: true,
+                        //       progress: undefined,
+                        //     }
+                        //   );
+                        // }
 
-                      // props.addToCart({
-                      //   id: product.product_id,
-                      //   product,
-                      //   amount: 1,
-                      //   total: 0,
-                      //   payable: 0,
-                      // });
-                    }}
-                    className="button is-normal"
-                    Style="background-color:#BA7D82;color:white;border-radius:10px;height:35px;width:150px;"
-                  >
-                    <strong style={{ color: "white" }}> Add to Cart</strong>
-                  </button>
-                  <br />
-                  <br />
-                  Promo Code &nbsp; &nbsp;
-                  <input
-                    id="offerbox"
-                    onChange={(e) => setPromoCode(e.target.value)}
-                    Style="padding-left:10px;background: transparent;width:90px;border: none;border-bottom: 2px solid #BA7D82;"
-                  />
-                  <button
-                    className="bg-red-400 px-3 py-1 text-white ml-1 rounded-md"
-                    onClick={() => checkPromoCode(product)}
-                  >
-                    Apply
-                  </button>
-                  <br />
-                  <span
-                    className={` ml-[50px] ${
-                      promoCodeStatus ? "text-green-500" : "text-red-600"
-                    }`}
-                  >
-                    {promoCodeError ? `*${promoCodeError}*` : ""}
+                        // {design ? (
+                        //   <span className="flex items-center justify-center bg-green-300 w-[110px] p-[1px] rounded-full">
+                        //     customised &nbsp;
+                        //     <MdOutlineCancel size={17} />
+                        //   </span>
+                        // ) : (
+                        //   ""
+                        // )}
+
+                        // props.addToCart({
+                        //   id: product.product_id,
+                        //   product,
+                        //   amount: 1,
+                        //   total: 0,
+                        //   payable: 0,
+                        // });
+                      }}
+                      className=" p-2"
+                      Style="background-color:#BA7D82;color:white;border-radius:5px;height:40px;width:150px;"
+                    >
+                      <strong style={{ color: "white" }}> ADD TO CART</strong>
+                    </button>
+                    <span>
+                      {wishlistStatus ? (
+                        <div
+                          onClick={() => {
+                            dispatch({
+                              type: "REMOVE_FROM_WISHLIST",
+                              payload: product.product_id,
+                            });
+                            toast(
+                              `${product.product_name} is removed from your wishlist !   😯😯 `,
+                              {
+                                position: "top-center",
+                                autoClose: 3000,
+                                hideProgressBar: true,
+                                closeOnClick: true,
+                                pauseOnHover: false,
+                                draggable: true,
+                                progress: undefined,
+                              }
+                            );
+                          }}
+                          className="bg-[#606060] cursor-pointer flex items-center space-x-1 inline p-2 rounded-md text-white w-[180px] "
+                        >
+                          <span>
+                            <RiHeart3Fill
+                              size={10}
+                              style={{
+                                // paddingLeft: 10,
+                                width: 25,
+                                height: 25,
+                                color: "red",
+                              }}
+                            />
+                          </span>
+                          <span>ADD TO WISHLIST</span>
+                        </div>
+                      ) : (
+                        <div
+                          onClick={() => {
+                            if (user) {
+                              dispatch({
+                                type: "ADD_TO_WISHLIST",
+                                payload: product,
+                              });
+                              toast(
+                                `${product.product_name} is added to your wishlist !   ❤🧡 `,
+                                {
+                                  position: "top-center",
+                                  autoClose: 3000,
+                                  hideProgressBar: true,
+                                  closeOnClick: true,
+                                  pauseOnHover: false,
+                                  draggable: true,
+                                  progress: undefined,
+                                }
+                              );
+                            } else {
+                              toast.error(
+                                `You should login first to perform this action 😥😥 `,
+                                {
+                                  position: "top-center",
+                                  autoClose: 5000,
+                                  hideProgressBar: true,
+                                  closeOnClick: true,
+                                  pauseOnHover: false,
+                                  draggable: true,
+                                  progress: undefined,
+                                }
+                              );
+                            }
+                          }}
+                          className="bg-[#606060] cursor-pointer flex items-center space-x-1 p-2 rounded-md text-white w-[180px]"
+                        >
+                          <span>
+                            <RiHeart3Line
+                              // size={10}
+                              style={{
+                                // paddingLeft: 10,
+
+                                width: 25,
+                                height: 25,
+                              }}
+                            />
+                          </span>
+                          <span>ADD TO WISHLIST</span>
+                        </div>
+                      )}
+                    </span>
                   </span>
-                  <Headertwo>
-                    <strong style={{ color: "#BA7D82" }}>Description</strong>
-                  </Headertwo>
+                  <br />
+                  <br />
+                  <span className="flex flex-col justify-start">
+                    <span>
+                      <span className="flex items-baseline">
+                        <span className="border-4 border-[#606060] rounded-md">
+                          <span className="p-1 px-2 bg-[#606060] text-white rounded-tl-md rounded-bl-md">
+                            PROMO CODE
+                          </span>
+
+                          <input
+                            id="offerbox"
+                            onChange={(e) => setPromoCode(e.target.value)}
+                            Style="padding-left:2px;background: transparent;width:90px;border: none;border-bottom: 2px solid #fff;outline:none"
+                          />
+                        </span>
+                        &nbsp; &nbsp;
+                        <button
+                          className="bg-[#BA7D82] px-3 py-1 text-white ml-1 rounded-md"
+                          onClick={() => checkPromoCode(product)}
+                        >
+                          APPLY
+                        </button>
+                      </span>
+                      <br />
+                      <span
+                        className={` ml-[50px] ${
+                          promoCodeStatus ? "text-green-500" : "text-red-600"
+                        }`}
+                      >
+                        {promoCodeError ? `*${promoCodeError}*` : ""}
+                      </span>
+                    </span>
+                    <span className="">
+                      <strong style={{ color: "#BA7D82" }}>Description</strong>
+                    </span>
+                  </span>
                   <p style={{ textTransform: "capitalize" }}>
                     {product.product_description}
                   </p>

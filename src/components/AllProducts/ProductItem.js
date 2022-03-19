@@ -18,13 +18,13 @@ const ProductItem = (props) => {
       <div
         className=" column is-3"
         style={{
-          marginTop: -25,
-          marginBottom: -25,
+          marginTop: 25,
+          marginBottom: 35,
           backgroundColor: "transparent",
         }}
       >
         <div
-          className="box"
+          className="box flex flex-col justify-center space-y-1 mx-auto"
           style={{ backgroundColor: "transparent" }}
           Style="outline: none;box-shadow: none;"
         >
@@ -63,13 +63,20 @@ const ProductItem = (props) => {
             </div>
           </div>
           <div className="container" Style="text-align:center;">
-            <h8 className="title" style={{ fontSize: 15, color: "black" }}>
-              <strong>{product.product_name.toUpperCase()}</strong>
+            <h8 className="title" style={{ fontSize: 18, color: "black" }}>
+              <strong className="flex justify-center">
+                {product.product_name.toUpperCase()}
+              </strong>
             </h8>
           </div>
-          <div className=" flex justify-around">
-            <span className="text-xl ml-1" style={{ fontSize: 15 , color: "black" }}>
-              <strong style={{ fontSize: 15 , color: "black" }}>₹ {product.product_price}</strong>
+          <div className="flex justify-center">
+            <span
+              className="text-xl ml-1"
+              style={{ fontSize: 18, color: "black" }}
+            >
+              <strong style={{ fontSize: 15, color: "black" }}>
+                ₹ {product.product_price}
+              </strong>
             </span>
             {/* <span className="mr-1">
               <p style={{ textDecoration: "line-through",  fontSize: "15px" }}>

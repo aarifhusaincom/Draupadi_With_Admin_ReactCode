@@ -47,7 +47,7 @@ const ProductList = (props) => {
                     >
                       <br />
                       <div className="row">
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 ">
                           <h2
                             className="title"
                             style={{

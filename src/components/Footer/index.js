@@ -130,7 +130,7 @@ const Footer = () => {
         <div className="container" style={{ backgroundColor: "#f9f7f3" }}>
           <div className="row" id="foott" style={{ paddingTop: 20 }}>
             <div
-              className="col-3 py-2 flex flex-col space-y-3"
+              className="col-xs-12 col-lg-3  py-2 flex flex-col space-y-3"
               // style={{ marginRight: -0px }}
             >
               <strong>
@@ -174,7 +174,7 @@ const Footer = () => {
         <FooterLink>In The News</FooterLink>
         </li> */}
             </div>
-            <div className="col-lg-3 col-xs-12 py-2">
+            <div className="col-xs-12 col-lg-3 py-2">
               <strong>
                 <FooterHeader
                   className="border-t-[1px] border-b-[1px] border-slate-400 py-[4px]"
@@ -247,7 +247,7 @@ justify-content:space-between;"
                 </a>
               </div>
             </div>
-            <div className="col-3 py-2" style={{ marginRight: 0 }}>
+            <div className="col-xs-12 col-lg-3 py-2" style={{ marginRight: 0 }}>
               <FooterHeader
                 className="border-t-[1px] border-b-[1px] border-slate-400 py-[4px]"
                 style={{ fontSize: "18px" }}

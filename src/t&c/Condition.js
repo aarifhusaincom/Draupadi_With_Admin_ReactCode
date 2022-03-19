@@ -6,8 +6,8 @@ export default function Condition(){
     return(
         <div className="conditionpage">
         <div className="conditioncontent">
-
-<h2>TERMS & CONDITIONS</h2><br/><br/>
+        <br/><br/>
+<b>TERMS & CONDITIONS</b><br/><br/>
 
 <b>1. USE OF THE PLATFORM</b><br/>
 Welcome to www.draupadi.co.in (“Site" or "Draupadi”). You may be 
@@ -502,6 +502,7 @@ Customer Service Desk
 E-mail: bagsbydraupadi@gmail.com
 Phone: +91-9953730501
 Contact Days: Monday to Saturday (9:00 a.m. to 6:00 p.m.)
+<br/><br/>
         </div>
         </div>
     )

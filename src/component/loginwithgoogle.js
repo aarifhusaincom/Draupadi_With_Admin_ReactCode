@@ -109,7 +109,7 @@ import { useDispatch } from "react-redux";
         </h1>
         <small style={{ textAlign: "center", color: "black", fontWeight:700,fontSize:15}}>
           {" "}
-          Continue for Full Access to Our Website{" "}
+          Click the Google Button to Login{" "}
         </small>
         <br />
         <div

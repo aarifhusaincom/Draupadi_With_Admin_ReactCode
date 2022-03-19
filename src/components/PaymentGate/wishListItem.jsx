@@ -78,7 +78,7 @@ export default function WishList() {
           Style="border-bottom-style:dashed;border-bottom-width:thin;border-bottom-color:#BA7D82;"
         >
           <div className="hero-body container">
-            <h3 className="">My WishList</h3>
+            <h4 className="title" style={{fontSize: "25px"}}>My WishList</h4>
           </div>
         </div>
         <br />
@@ -90,7 +90,7 @@ export default function WishList() {
                   <Link Style="text-decoration: none;" to="/products">
                     <h2
                       className="title"
-                      style={{ color: "#B77304", fontSize: 21 }}
+                      style={{ color: "#B77304", fontSize: "18px" }}
                     >
                       <FaLongArrowAltLeft />
                       Back to Products

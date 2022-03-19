@@ -45,6 +45,22 @@ const Footer = () => {
     setMail(mail);
   };
 
+  function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  }
+
   const extraContent = (
     <div>
       <p className="extra-content">
@@ -71,7 +87,37 @@ const Footer = () => {
           onClick={toggleReadMore}
           className="read-or-hide cursor-pointer font bold text-blue-500"
         >
-          {isReadMore ? "...Read More" : " Show Less"}
+          {isReadMore ? (
+            <button
+              id="myBtn"
+              style={{
+                backgroundColor: "#2f2f2f",
+                padding: "6px",
+                color: "white",
+                borderRadius: "5px",
+                fontSize: "14px",
+                fontFamily: "Amiri-serif",
+                fontWeight: 100,
+              }}
+            >
+              Read more
+            </button>
+          ) : (
+            <button
+              id="myBtn"
+              style={{
+                backgroundColor: "#2f2f2f",
+                padding: "6px",
+                color: "white",
+                borderRadius: "5px",
+                fontSize: "14px",
+                fontFamily: "Amiri-serif",
+                fontWeight: 100,
+              }}
+            >
+              Show less
+            </button>
+          )}
         </span>
       </p>
     );
@@ -84,8 +130,8 @@ const Footer = () => {
         <div className="container" style={{ backgroundColor: "#f9f7f3" }}>
           <div className="row" id="foott" style={{ paddingTop: 20 }}>
             <div
-              className="col-lg-3 col-xs-12  py-2 flex flex-col space-y-3"
-              style={{ marginRight: -15 }}
+              className="col-3 py-2 flex flex-col space-y-3"
+              // style={{ marginRight: -0px }}
             >
               <strong>
                 <FooterHeader1
@@ -201,7 +247,7 @@ justify-content:space-between;"
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 col-xs-12 py-2" style={{ marginRight: 25 }}>
+            <div className="col-3 py-2" style={{ marginRight: 0 }}>
               <FooterHeader
                 className="border-t-[1px] border-b-[1px] border-slate-400 py-[4px]"
                 style={{ fontSize: "18px" }}

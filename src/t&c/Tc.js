@@ -7,7 +7,8 @@ export default function Tc(){
         <div>
          <div className="termpage">
          <div className="termbox">
-         <h2>PRIVACY POLICY</h2><br/><br/>
+         <br/><br/>
+         <b>PRIVACY POLICY</b><br/><br/>
 <p className="peragraph">This Privacy Policy outlines Draupadi’s  approach to Data Protection and Privacy to fulfil its obligations under the applicable laws and regulations. This Privacy Policy applies to your Personal Data which is processed by us, whether in physical or electronic mode.
 While you may be able to browse the platform (Website and App collectively referred to as “Platform”) from countries outside of India, however please note we do not offer any product/service under this Platform outside India.  By visiting the platform or providing your information, you expressly agree to be bound by this Privacy Policy and agree to be governed by the laws of India including but not limited to the laws applicable to data protection and privacy. If you do not agree please do not use or access our Platform.
 In this Privacy Policy, the expressions ‘Personal Data’, ‘Data Subject’, ‘Controller’, ‘Processor’ and ‘Processing’ shall have the meanings given to them in the applicable privacy laws.
@@ -154,7 +155,7 @@ Our website may contain links to websites of other organizations. This privacy p
 <br/><br/><b>CHILDREN’S PRIVACY</b><br/>
 Our website is directed to be used by adults only. If you are not an adult, while you may look at our site, you should not make a purchase, register, or submit Personal Data to us. We or our associates /affiliates do not knowingly collect information from minors.
 <br/><br/><b>YOUR RIGHTS AS A CUSTOMER</b><br/>
-We understand that when you interact with Draupadi, you have rights over your Personal Data. These rights involve providing reasonable steps to allow you to access your personal data, correct any errors among others. In the event that you are not satisfied with our response or have unresolved concerns, you can get in touch with us to resolve the issue by means of bagsbydraupadi@gmail.com
+We understand that when you interact with Draupadi, you have rights over your Personal Data. These rights involve providing reasonable steps to allow you to access your personal data, correct any errors among others. In the event that you are not satisfied with our response or have unresolved concerns, you can get in touch with us to resolve the issue by means of <b><a href="mailto:bagsbydraupadi@gmail.com">bagsbydraupadi@gmail.com</a></b>
 </p>
 </div>
         </div>

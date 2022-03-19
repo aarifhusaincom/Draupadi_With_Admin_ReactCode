@@ -6,8 +6,8 @@ export default function Privacy(){
     return(
         <div>
          <div className="privacypolicypage">
-         <div className="policycontent pb-9">
-         <h2 className="pt-4">SHIPPING POLICY</h2>
+         <div className="policycontent pb-9"><br/><br/>
+         <b>SHIPPING POLICY</b>
 <br/><br/><b>How does the delivery process work?</b>
 <br/>•	Once our system processes your order, your products are inspected thoroughly to ensure they are in a perfect condition.
 <br/>•	After they pass through the final round of quality check, they are packed and handed over to our trusted delivery partner.

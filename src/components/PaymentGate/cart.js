@@ -121,8 +121,8 @@ const Cart = (props) => {
       product_quantity: 1,
       product_price: cartitem[i].product_price,
       offer_id: 3,
-      customised_designid: 1,
-      design_code: "AB200",
+      customised_designid: cartitem[i]?.customised_designid,
+      design_code: cartitem[i]?.design_code,
       price: cartitem[i].product_price,
     });
   }

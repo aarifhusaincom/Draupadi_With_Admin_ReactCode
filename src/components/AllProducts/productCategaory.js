@@ -719,8 +719,8 @@ const Pcategory = (props) => {
                   <span className="flex flex-col justify-start">
                     <span>
                       <span className="flex items-baseline">
-                        <span className="border-4 border-[#606060] rounded-md">
-                          <span className="p-1 px-2 bg-[#606060] text-white rounded-tl-md rounded-bl-md" style={{fontWeight:'100'}}>
+                        <span className="flex border-2 border-[#606060] rounded-[9px]">
+                          <span className=" px-1 flex items-center justify-center bg-[#606060] text-white border-2 border-[#606060] rounded-tl-md rounded-bl-md" style={{fontWeight:'100'}}>
                             PROMO CODE
                           </span>
 

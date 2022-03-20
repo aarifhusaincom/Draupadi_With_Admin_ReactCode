@@ -711,7 +711,7 @@ const Cart = (props) => {
         Style="border-bottom-style:dashed;border-bottom-width:thin;border-bottom-color:#B77304;"
       >
         <div className="hero-body container">
-          <h4 className="title">My Cart</h4>
+          <h4 className="title" style={{fontSize: "18px"}}>My Cart</h4>
         </div>
       </div>
       <br />
@@ -723,7 +723,7 @@ const Cart = (props) => {
                 <Link to="/products" Style="text-decoration: none;">
                   <h2
                     className="title"
-                    style={{ color: "#B77304", fontSize: 21 }}
+                    style={{ color: "#B77304", fontSize: "18px" }}
                   >
                     <AiOutlineArrowLeft
                       style={{ paddingRight: 15, fontSize: 45 }}
@@ -916,7 +916,7 @@ const Cart = (props) => {
 
               <div>
                 <div className="container">
-                  <h3>Your Shipping Address:</h3>
+                  <h3 style={{fontSize: "18px"}}>Your Shipping Address:</h3>
                   {user.shippingDetails ? (
                     <p>
                       {user.shippingDetails.first_name + " "}
@@ -932,9 +932,9 @@ const Cart = (props) => {
                     <p>Kindly update Shipping details</p>
                   )}
                   <Link to="/address" className="!text-neutral-700 ">
-                    <button className="bg-gray-300 shadow-md rounded-md p-2 px-3 hover:bg-slate-400 hover:text-neutral-700 transition-all duration-200 ">
-                      Update shipping address
-                    </button>
+                    <a style={{color: "blue"}}>
+                      Update shipping address?
+                    </a>
                   </Link>
                 </div>
               </div>

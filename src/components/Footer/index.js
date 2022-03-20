@@ -45,6 +45,22 @@ const Footer = () => {
     setMail(mail);
   };
 
+  function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    }
+  };
+
   const extraContent = (
     <div>
       <p className="extra-content">
@@ -85,7 +101,7 @@ const Footer = () => {
           <div className="row" id="foott" style={{ paddingTop: 20 }}>
             <div
               className="col-3 py-2 flex flex-col space-y-3"
-              style={{ marginRight: -15 }}
+              // style={{ marginRight: -0px }}
             >
               <strong>
                 <FooterHeader1
@@ -201,7 +217,7 @@ justify-content:space-between;"
                 </a>
               </div>
             </div>
-            <div className="col-3 py-2" style={{ marginRight: 25 }}>
+            <div className="col-3 py-2" style={{ marginRight: 0 }}>
               <FooterHeader
                 className="border-t-[1px] border-b-[1px] border-slate-400 py-[4px]"
                 style={{ fontSize: "18px" }}
@@ -214,8 +230,8 @@ justify-content:space-between;"
                   className="about-content"
                   Style="text-align:justify;position:relative;font-size:14px; word-spacing:5px;
         font-family:Amiri,serif; font-style: normal;"
-                >
-                  <ReadMore>
+                > 
+                  {/* <ReadMore>
                     Draupadi was established in February 2021 at Mathura, the
                     homeland and birthplace of Lord Krishna. Mathura is known
                     for its textile industry and especially for Sari Printing &
@@ -230,8 +246,10 @@ justify-content:space-between;"
                     & accessories. These bags & accessories are made by the
                     underprivileged women residing in the nearby villages of
                     Mathura..
-                  </ReadMore>
-                </p>
+                  </ReadMore> */}
+                  Draupadi was established in February 2021 at Mathura, the homeland and birthplace of Lord Krishna. Mathura is known for its textile industry and especially for Sari Printing & Manufacturing. Most of the villages around Mathura have conditions of poverty leading to malnutrition, <span id="dots">...</span><span id="more" style={{display: "none"}}>child labour, scarce resources for an average family size of 6-8, and lack of purpose to avail education, especially for the girl child.The idea behind establishing this unit was to provide an avenue of employment to the under-privileged to uplift and empower them while creating quality products. Draupadi upcycles the Sari wastes to develop vibrant and trendy bags & accessories. These bags & accessories are made by the underprivileged women residing in the nearby villages of Mathura.</span></p>
+                  <button onclick="myFunction()" id="myBtn" style={{backgroundColor: "#2f2f2f", padding: "6px", color: "white", borderRadius: "5px" , fontSize: "14px" , fontFamily: "Amiri-serif", fontWeight:100}}>Read more</button>
+              
               </strong>
             </div>
             <div className="col py-2">

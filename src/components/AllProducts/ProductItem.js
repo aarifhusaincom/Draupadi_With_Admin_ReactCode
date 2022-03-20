@@ -67,15 +67,15 @@ const ProductItem = (props) => {
               <strong>{product.product_name.toUpperCase()}</strong>
             </h8>
           </div>
-          <div className=" flex justify-between">
-            <span className="text-xl ml-1">
-              <strong>₹{product.product_price}</strong>
+          <div className=" flex justify-around">
+            <span className="text-xl ml-1" style={{ fontSize: 15 , color: "black" }}>
+              <strong style={{ fontSize: 15 , color: "black" }}>₹ {product.product_price}</strong>
             </span>
-            <span className="mr-1">
-              <p style={{ textDecoration: "line-through" }}>
+            {/* <span className="mr-1">
+              <p style={{ textDecoration: "line-through",  fontSize: "15px" }}>
                 ₹{product.product_actualprice}
               </p>
-            </span>
+            </span> */}
           </div>
           <div className="container" Style="text-align:center;"></div>
         </div>

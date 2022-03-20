@@ -53,13 +53,13 @@ export default function Profile(props) {
   }
   return (
     <>
-      <div className="container">
-        <div className="container">
+      <div className="container" style={{display: "flex" , flexDirection: "row" }}>
+        <div className="container" style={{display: "flex" , flexDirection: "column" }}>
           <FeaturedDiv className="main-container">
             <FeaturedTitle>
               <strong>My Account</strong>
             </FeaturedTitle>
-            <div className="container">
+            <div className="container" style={{maxWidth: "260px" , maxHeight: "260px"}}>
               <FeaturedItem className="feature-item">
                 <FeaturedMoneyContainer className="edit-info-div">
                   <Link
@@ -74,7 +74,7 @@ export default function Profile(props) {
                 </FeaturedTitle1>
               </FeaturedItem>
             </div>
-            <div className="container inner-container">
+            <div className="container inner-container" style={{maxWidth: "260px" , maxHeight: "260px"}}>
               <FeaturedItem className="feature-item">
                 <FeaturedMoneyContainer className="edit-info-div">
                   <Link
@@ -89,7 +89,7 @@ export default function Profile(props) {
                 </FeaturedTitle1>
               </FeaturedItem>
             </div>
-            <div className="container inner-container">
+            <div className="container inner-container" style={{maxWidth: "260px" , maxHeight: "260px"}}>
               <FeaturedItem className="feature-item">
                 <FeaturedMoneyContainer className="edit-info-div">
                   <Link

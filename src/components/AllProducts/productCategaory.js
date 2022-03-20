@@ -318,7 +318,7 @@ const Pcategory = (props) => {
                       }}
                     />
                     <strong style={{ paddingLeft: "5px" }}>
-                      &nbsp; Choose Your Design&nbsp;&nbsp;&nbsp;
+                      &nbsp; CHOOSE YOUR DESIGN&nbsp;&nbsp;&nbsp;
                     </strong>
                   </span>
 
@@ -433,9 +433,9 @@ const Pcategory = (props) => {
                         </span>
                       </span>
                       <strong
-                        style={{ color: "#555", opacity: 0.6, wordSpacing: 5 }}
+                        style={{ color: "#555", opacity: 0.6, wordSpacing: 3 }}
                       >
-                        &nbsp; All Inclusive
+                        &nbsp;All Inclusive
                       </strong>
                     </span>
                     <span className="">
@@ -622,7 +622,7 @@ const Pcategory = (props) => {
                       className=" p-2"
                       Style="background-color:#BA7D82;color:white;border-radius:5px;height:40px;width:150px;"
                     >
-                      <strong style={{ color: "white" }}> ADD TO CART</strong>
+                      <strong style={{ color: "white",fontSize:'16px',fontWeight:'100' }}> ADD TO CART</strong>
                     </button>
                     <span>
                       {wishlistStatus ? (
@@ -655,6 +655,7 @@ const Pcategory = (props) => {
                                 width: 25,
                                 height: 25,
                                 color: "red",
+                               
                               }}
                             />
                           </span>
@@ -705,10 +706,10 @@ const Pcategory = (props) => {
 
                                 width: 25,
                                 height: 25,
-                              }}
+                                fontWeight:'100',                              }}
                             />
                           </span>
-                          <span>ADD TO WISHLIST</span>
+                          <span style={{fontWeight:'100'}}>ADD TO WISHLIST</span>
                         </div>
                       )}
                     </span>
@@ -719,7 +720,7 @@ const Pcategory = (props) => {
                     <span>
                       <span className="flex items-baseline">
                         <span className="border-4 border-[#606060] rounded-md">
-                          <span className="p-1 px-2 bg-[#606060] text-white rounded-tl-md rounded-bl-md">
+                          <span className="p-1 px-2 bg-[#606060] text-white rounded-tl-md rounded-bl-md" style={{fontWeight:'100'}}>
                             PROMO CODE
                           </span>
 
@@ -733,6 +734,7 @@ const Pcategory = (props) => {
                         <button
                           className="bg-[#BA7D82] px-3 py-1 text-white ml-1 rounded-md"
                           onClick={() => checkPromoCode(product)}
+                          style={{fontWeight:'100'}}
                         >
                           APPLY
                         </button>
@@ -747,8 +749,10 @@ const Pcategory = (props) => {
                       </span>
                     </span>
                     <span className="">
-                      <strong style={{ color: "#BA7D82" }}>Description</strong>
+                      <strong style={{ color: "#BA7D82" }}>DESCRIPTION</strong>
+                    <hr></hr>
                     </span>
+                    
                   </span>
                   <p style={{ textTransform: "capitalize" }}>
                     {product.product_description}

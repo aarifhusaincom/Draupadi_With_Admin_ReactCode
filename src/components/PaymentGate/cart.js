@@ -411,6 +411,298 @@ const Cart = (props) => {
           });
       });
   };
+  // const [click, setClick] = React.useState(false);
+  // const [online, setOnline] = React.useState(false);
+  // const [cash, setCash] = React.useState(false);
+  // const [cartitem, setCartitem] = React.useState([]);
+  // const [cartvalue, setCartvalue] = React.useState(0);
+  // const [address, setAddress] = React.useState([]);
+  // const [ordercart, setOrdercart] = React.useState([]);
+  // const [data, setData] = React.useState([]);
+  // const [message, setMessage] = React.useState("");
+  // const [shipcart, setShipcart] = React.useState([]);
+  // const [orderid, setOrderid] = React.useState(null);
+  // const [status, setStatus] = React.useState(false);
+  // const [offer, setOffer] = React.useState();
+  // const { cart } = props.context;
+  // const cartKeys = Object.keys(cart || {});
+  // React.useEffect(() => {
+  //   //------------------------------------------ShipRocket-API-------------------------------------------------------
+  //   // {email:'arorapr94@gmail.com',password:'123@Pri'}
+  //   //    axios.post("https://apiv2.shiprocket.in/v1/external/auth/login", {email:'dev.cerbosys@gmail.com',password:'123@Cer'}).then(res=>{
+  //   fetch("https://cerbosys.in:4000/draupadi/getUserCartItems", {
+  //     headers: authHeaderuser(),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       var off = localStorage.getItem("offer");
+  //       console.log("Its working", data);
+  //       setCartitem(data.data.message);
+  //       var cartlength = data.data.message.length;
+  //       var data = data.data.message;
+  //       var value = 0;
+  //       var ship = [];
+  //       for (let i = 0; i < cartlength; i++) {
+  //         value =
+  //           value +
+  //           data[i].product_price +
+  //           data[i].design_price -
+  //           data[i].offerdiscount;
+  //         var data1 = {
+  //           sku: String(i),
+  //           name: data[i].product_name,
+  //           price: String(value),
+  //           weight: data[i].weight,
+  //           length: data[i].length,
+  //           breadth: data[i].breadth,
+  //           height: data[i].height,
+  //           amount: String(value),
+  //           quantity: "1",
+  //         };
+  //         ship.push(data1);
+  //       }
+  //       setShipcart(ship);
+  //       setCartvalue(value);
+  //       var cartii = [];
+  //       console.log("cartiiiiiiiiiiiiiiiiiiiiii", cartii);
+  //       localStorage.getItem("payment");
+  //       for (let i = 0; i < cartitem.length; i++) {
+  //         var data = {
+  //           product_id: cartitem[i].product_id,
+  //           product_quantity: 1,
+  //           product_price: cartitem[i].product_price,
+  //           offer_id: cartitem[i].offer_id,
+  //           customised_designid: cartitem[i].customised_designid,
+  //           design_code: cartitem[i].design_code,
+  //           price: cartitem[i].design_price,
+  //         };
+  //         cartii.push(data);
+  //         setOrdercart(cartii);
+  //         console.log("datadtad", cartii);
+  //       }
+  //     });
+  //   //------------------------------------------ShipRocket-API-------------------------------------------------------
+  //   axios
+  //     .get("https://cerbosys.in:4000/draupadi/getAllAddress", {
+  //       headers: authHeaderuser(),
+  //     })
+  //     .then((res) => {
+  //       console.log("getAllAddress api response==>", res.data.data);
+  //       if (res.data.data) {
+  //         setData(res.data.data);
+  //         setMessage(res.data);
+  //       }
+  //     });
+  // }, [cartvalue]);
+  // function cartValue() {
+  //   let total = 0;
+  //   const start = cartKeys[0];
+  //   localStorage.setItem("cartcount", cartKeys.length);
+  //   const limit = parseInt(start) + parseInt(cartKeys.length);
+  //   var num = 0;
+  //   for (let i = start; i < limit; i++) {
+  //     var tick = cartKeys[num];
+  //     var vallue = cart[tick].payable;
+  //     total += vallue;
+  //     localStorage.setItem("paynow", total);
+  //     num++;
+  //   }
+  //   return total;
+  // }
+  // function onClickOnline(e) {
+  //   setOnline(true);
+  //   setCash(false);
+  // }
+  // function onClickCash(e) {
+  //   setCash(true);
+  //   setOnline(false);
+  // }
+  // function clearCart() {
+  //   axios
+  //     .get("https://cerbosys.in:4000/draupadi/clearCart", {
+  //       headers: authHeaderuser(),
+  //     })
+  //     .then((res) => {
+  //       console.log("clearCart", res);
+  //     })
+  //     .catch((err) => {
+  //       console.log("cathing errors bro", err);
+  //     });
+  // }
+  // const removefromcart = (e) => {
+  //   console.log("cart", e);
+  //   axios
+  //     .get("https://cerbosys.in:4000/draupadi/deleteCart?cart_id=" + e, {
+  //       headers: authHeaderuser(),
+  //     })
+  //     .then((res) => {
+  //       console.log("Deleted from cart", res);
+  //     });
+  // fetch("https://cerbosys.in:4000/draupadi/getUserCartItems",{
+  //   headers:authHeaderuser()
+  // }).then(res=>res.json()).then(data=>{
+  //   console.log("Its working", data.data.message)
+  //   setCartitem(data.data.message);
+  //   var cartlength = data.data.message.length;
+  //   var data = data.data.message;
+  //   var value = 0;
+  //   var ship = [];
+  //   for(let i=0; i<cartlength; i++){
+  //     value = value + data[i].product_price + data[i].design_price ;
+  //   }
+  //   console.log("shipship", ship);
+  //    setCartvalue(value)
+  // })
+  // };
+
+  // function apple(){
+  //   var cartii = [];
+  //   console.log("cartiiiiiiiiiiiiiiiiiiiiii", cartii);
+  //   for(let i=0; i<=cartitem.length ;i++){
+  //       console.log("Length");
+  //       var data = {
+  //         product_id:cartitem.product_id,
+  // //         product_quantity:1,
+  // //         product_price:cartitem.product_price,
+  // //         offer_id:cartitem.offer_id,
+  // //         customised_designid:cartitem.design_id,
+  // //         design_code:cartitem.design_code,
+  // //         design_price:cartitem.design_price
+  // //       }
+  // //       cartii.push(data)
+  // //   }
+  // //   return cartii;
+  // // }
+
+  // function checkout() {
+  //   // console.log("Checkout")
+  //   localStorage.setItem("paynow", cartvalue);
+  //   // alert("Clicked");
+  //   var user = localStorage.getItem("user");
+  //   user = JSON.parse(user);
+  //   console.log("Checkout", address);
+  //   console.log("Users", user);
+  //   var firstname = address.first_name;
+  //   var lastname = address.last_name;
+  //   var addressline1 = address.address_line1;
+  //   var addressline2 = address.address_line2;
+  //   // var address_type = address.address_type;
+  //   var city = address.city;
+  //   var pincode = address.postalcode;
+  //   var state = address.state_name;
+  //   // var country =
+  //   // var email =
+  //   var phonenum = address.mobilenumber;
+
+  //   axios
+  //     .post(
+  //       "https://cerbosys.in:4000/draupadi/proceedToCheckout",
+  //       {
+  //         shiprocket_orderid: "",
+  //         totalAmount: cartvalue,
+  //         discount: 100,
+  //         payableAmount: cartvalue,
+  //         shipping_id: 1,
+  //         status: "pending",
+  //         payment_type: online ? "prepaid" : "postpaid",
+  //         order_date: "2022-02-05",
+  //         products: ordercart,
+  //       },
+  //       { headers: authHeaderuser() }
+  //     )
+  //     .then((response) => {
+  //       console.log("Response", response.data.id);
+  //       var idd = response.data.id;
+  //       setOrderid(idd);
+
+  //       axios
+  //         .post("https://apiv2.shiprocket.in/v1/external/auth/login", {
+  //           email: "dev.cerbosys@gmail.com",
+  //           password: "123@Cer",
+  //         })
+  //         .then((res) => {
+  //           console.log("Shippop", res.data.token);
+  //           console.log("Response-ReCheck", response.data.id);
+  //           axios
+  //             .post(
+  //               "https://apiv2.shiprocket.in/v1/external/orders/create/adhoc",
+  //               {
+  //                 order_id: idd,
+  //                 full_name: firstname + " " + lastname,
+  //                 address1: addressline1,
+  //                 address2: addressline2,
+  //                 city: city,
+  //                 pincode: pincode,
+  //                 state: state,
+  //                 country: "India",
+  //                 //  "billing_email": localStorage.getItem("demail"),
+  //                 customer_phone: "0" + phonenum,
+
+  //                 billing_address: {
+  //                   first_name: firstname,
+  //                   last_name: lastname,
+  //                   address1: addressline1,
+  //                   address2: addressline2,
+  //                   city: city,
+  //                   pincode: pincode,
+  //                   state: state,
+  //                   country: "india",
+  //                   phone: "0" + phonenum, //Pad zero at the start of 10 digits
+  //                 },
+
+  //                 order_date: new Date(),
+  //                 total: "",
+  //                 payment_method: localStorage.getItem("payment"),
+  //                 products: shipcart,
+  //               },
+  //               { headers: { Authorization: "Bearer " + res.data.token } }
+  //             )
+  //             .then((data) => {
+  //               console.log("data-data", data);
+  //               if (data.status == 200) {
+  //                 axios
+  //                   .post(
+  //                     "https://cerbosys.in:4000/draupadi/updateShipRocketDetails",
+  //                     {
+  //                       order_id: orderid,
+  //                       shiprocket_orderid: data.data.order_id,
+  //                       shiprocket_shipmentid: data.data.shipment_id,
+  //                     },
+  //                     { headers: authHeaderuser() }
+  //                   )
+  //                   .then((res) => {
+  //                     console.log("thanos", res);
+  //                     if (res.data.success == true) {
+  //                       // alert("true")
+  //                       clearCart();
+  //                       setStatus(true);
+  //                     }
+  //                   });
+  //               }
+  //             })
+  //             .catch((err) => {
+  //               console.log("error", err);
+  //             });
+  //         });
+  //     });
+  // }
+
+  // const addreses = (e) => {
+  //   console.log(e);
+  //   console.log(data[e]);
+  //   setAddress(data[e]);
+  // };
+
+  // if (cash) {
+  //   localStorage.setItem("payment", "cod");
+  // }
+  // if (!cash) {
+  //   localStorage.setItem("payment", "prepaid");
+  // }
+
+  // if (status == true) {
+  //   return <Redirect to="/" />;
+  // }
 
   return (
     <>
@@ -419,7 +711,7 @@ const Cart = (props) => {
         Style="border-bottom-style:dashed;border-bottom-width:thin;border-bottom-color:#B77304;"
       >
         <div className="hero-body container">
-          <h3 className="">My Cart</h3>
+          <h4 className="title">My Cart</h4>
         </div>
       </div>
       <br />
@@ -682,7 +974,7 @@ const Cart = (props) => {
                     <button
                       className="button is-large"
                       style={{
-                        borderRadius: 50,
+                        borderRadius: 5,
                         height: 45,
                         fontSize: 15,
                         fontWeight: "bold",
@@ -703,7 +995,7 @@ const Cart = (props) => {
                         (user.shippingDetails ? false : true) || loading
                       }
                     >
-                      <FaShoppingCart style={{ marginRight: 10 }} />
+                      <FaShoppingCart style={{ marginRight: 10, paddingBottom: 3 }} />
                       {loading ? "Processing..." : "Proceed to Pay"}
                     </button>
                     // </Link>
@@ -729,18 +1021,21 @@ const Cart = (props) => {
                       // message.success("Cart is cleared successfully");
                     }}
                     style={{
-                      borderRadius: 50,
+                      borderRadius: 5,
                       height: 45,
                       fontSize: 15,
                       fontWeight: "bold",
-                      backgroundColor: "#eb3434",
+                      backgroundColor: "#808080",
                       color: "white",
                       marginLeft: 30,
                     }}
                     className="button is-large flex items-center "
                   >
                     <MdDeleteForever size={20} />
-                    &nbsp;<span>Clear Cart</span>
+                    &nbsp;<span style={{
+                      paddingTop: 6 ,
+                      
+                    }}>Clear Cart</span>
                   </button>
                 </div>
               </div>

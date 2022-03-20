@@ -24,7 +24,7 @@ const ProductItem = (props) => {
         }}
       >
         <div
-          className="box flex flex-col justify-center space-y-1 mx-auto"
+          className="box flex flex-col justify-center space-y-1 mx-auto h-auto"
           style={{ backgroundColor: "transparent" }}
           Style="outline: none;box-shadow: none;"
         >

@@ -187,7 +187,10 @@ const NavBar = (props) => {
           </div>
 
           <div className="mobile_useroption ">
-            <ul className="d-flex items-center" style={{ justifyContent: "space-between" }}>
+            <ul
+              className="d-flex items-center"
+              style={{ justifyContent: "space-between" }}
+            >
               {AuthService.getCurrentUser() ? (
                 <li
                   className="nav-item"
@@ -200,9 +203,7 @@ const NavBar = (props) => {
                     cursor: "pointer",
                   }}
                 >
-                  <NavLink to="/profile">
-                    {/* <FaUserCircle /> */}
-                  </NavLink>
+                  <NavLink to="/profile">{/* <FaUserCircle /> */}</NavLink>
                 </li>
               ) : (
                 <li
@@ -210,7 +211,7 @@ const NavBar = (props) => {
                   style={{
                     // paddingRight: 10,
                     // paddingLeft: 10,
-                    paddingTop: 15,
+                    // paddingTop: 15,
                     paddingBottom: 20,
                     cursor: "pointer",
                   }}
@@ -244,7 +245,7 @@ const NavBar = (props) => {
                 style={{
                   // paddingRight: 10,
                   // paddingLeft: 10,
-                  paddingTop: 20,
+                  // paddingTop: 20,
                   paddingBottom: 20,
                   cursor: "pointer",
                 }}
@@ -265,7 +266,7 @@ const NavBar = (props) => {
                 style={{
                   // paddingRight: 10,
                   // paddingLeft: 10,
-                  paddingTop: 20,
+                  // paddingTop: 20,
                   paddingBottom: 20,
                   cursor: "pointer",
                   fontSize: 20,
@@ -298,7 +299,7 @@ const NavBar = (props) => {
             // aria-expanded="false"
             // aria-label="Toggle navigation"
           >
-            <CgMenu size={24} azz />
+            <CgMenu size={24}  />
           </button>
         </div>
       </div>

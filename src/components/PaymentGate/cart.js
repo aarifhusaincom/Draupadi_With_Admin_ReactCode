@@ -916,24 +916,36 @@ const Cart = (props) => {
 
               <div>
                 <div className="container">
-                  <h3 style={{fontSize: "18px"}}>Your Shipping Address:</h3>
+                  <h3 style={{fontSize: "18px", fontWeight:"700", borderBottom: "2px solid #00000080", display: "inline", paddingBottom: -5}}>Your Shipping Address:</h3>
                   {user.shippingDetails ? (
-                    <p>
+                    <div>
+                      <br></br>
+                   <b> <p style={{textTransform: "capitalize"}}>
                       {user.shippingDetails.first_name + " "}
-                      {user.shippingDetails.last_name + " "},
-                      {user.shippingDetails.address_line1 + " "},
-                      {user.shippingDetails.address_line2 + " "},
-                      {user.shippingDetails.city},
-                      {user.shippingDetails.state_name},
-                      {user.shippingDetails.postalcode},
-                      {user.shippingDetails.mobilenumber}
+                      {user.shippingDetails.last_name + " "}
+                    </p> </b>
+
+                    <p style={{marginTop: -15}}>
+                      {user.shippingDetails.address_line1 + " "}
+                      {user.shippingDetails.address_line2 + " "}
                     </p>
+
+                    <p style={{marginTop: -15}}>
+                      {user.shippingDetails.city}, &nbsp;
+                      {user.shippingDetails.state_name}, &nbsp;
+                      {user.shippingDetails.postalcode}
+                    </p>
+
+                    <b> <p style={{marginTop: -15}}>
+                      {user.shippingDetails.mobilenumber}
+                    </p> </b>
+                    </div>
                   ) : (
                     <p>Kindly update Shipping details</p>
                   )}
                   <Link to="/address" className="!text-neutral-700 ">
                     <a style={{color: "blue"}}>
-                      Update shipping address?
+                      Change Shipping Address?
                     </a>
                   </Link>
                 </div>
@@ -978,7 +990,7 @@ const Cart = (props) => {
                         height: 45,
                         fontSize: 15,
                         fontWeight: "bold",
-                        backgroundColor: "#eb3434",
+                        backgroundColor: "#BA7D82",
                         color: "white",
                       }}
                       onClick={() => {
